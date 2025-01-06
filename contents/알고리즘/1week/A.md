@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2309)
+[백준 2309](https://www.acmicpc.net/problem/2309)
+
+<img src="https://img.shields.io/badge/C++-#00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
 
 ```
 #include <bits/stdc++.h>
