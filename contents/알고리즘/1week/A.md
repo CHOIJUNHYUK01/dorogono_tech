@@ -1,6 +1,6 @@
 [백준 2309](https://www.acmicpc.net/problem/2309)
 
-[![My Skills](https://skillicons.dev/icons?i=cpp)](https://skillicons.dev)
+<img src="https://img.shields.io/badge/c++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white">
 
 ```
 #include <bits/stdc++.h>
