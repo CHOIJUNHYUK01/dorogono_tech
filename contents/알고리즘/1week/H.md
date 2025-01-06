@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2559)
+[백준 2559](https://www.acmicpc.net/problem/2559)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -14,6 +16,7 @@ int main()
     {
         cin >> temp;
 
+        // 첫 인덱스가 아닌 이상 계속해서 누적값을 넣어줄거임
         if (i != 0)
         {
             psum[i] = temp + psum[i - 1];
@@ -24,10 +27,12 @@ int main()
         }
     }
 
+    // 첫 비교값 대입
     ret = psum[k - 1];
 
     for (int i = k; i < n; i++)
     {
+        // 연속 날짜값만큼 값을 뽑아서 큰 값 뽑아내기
         ret = max(ret, psum[i] - psum[i - k]);
     }
 

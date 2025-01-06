@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/4375)
+[백준 4375](https://www.acmicpc.net/problem/4375)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -19,6 +21,7 @@ int main()
             continue;
         }
 
+        // 1, 11, 111 ... 하면서 나머지값으로 확인
         while (ex)
         {
             ret++;

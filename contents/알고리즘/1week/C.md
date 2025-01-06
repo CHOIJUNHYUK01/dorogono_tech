@@ -1,11 +1,13 @@
-[링크](https://www.acmicpc.net/problem/2979)
+[백준 2979](https://www.acmicpc.net/problem/2979)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
 using namespace std;
 
 int a, b, c;
-int t[104];
+int t[104]; // 최대가 100임
 int tin, tout;
 int sum = 0;
 
@@ -17,9 +19,10 @@ int main()
     {
         cin >> tin >> tout;
 
+        // 들어오고 한 틱 뒤부터 세거나, 들어오고 나가기 한 틱 전에 세어야 함
         for (int i = tin + 1; i <= tout; i++)
         {
-            t[i]++;
+            t[i]++; // 시간에 따라서 차 대수 확인
         }
     }
 

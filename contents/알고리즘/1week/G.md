@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/9996)
+[백준 9996](https://www.acmicpc.net/problem/9996)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -12,19 +14,24 @@ int main()
     cin >> n >> s;
     for (int i = 0; i < s.size(); i++)
     {
+        // * 위치 저장 (find로 찾기 가능)
         if (s[i] == '*')
         {
             d = i;
             break;
         }
+
+        // 앞 글자 저장 (substr로 가능)
         f += s[i];
     }
 
+    // 뒷 글자 저장 (substr로 가능)
     for (int i = d + 1; i < s.size(); i++)
     {
         b += s[i];
     }
 
+    // 주어진 값 길이 확인용
     int testS = f.size() + b.size();
 
     for (int i = 0; i < n; i++)
@@ -41,6 +48,7 @@ int main()
             continue;
         }
 
+        // 앞글자 확인
         for (int j = 0; j < f.size(); j++)
         {
             twf += tw[j];
@@ -52,6 +60,7 @@ int main()
             continue;
         }
 
+        // 뒷글자 확인
         for (int j = tw.size() - b.size(); j < tw.size(); j++)
         {
             twb += tw[j];
