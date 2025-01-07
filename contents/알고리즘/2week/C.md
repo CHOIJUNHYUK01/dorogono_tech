@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2468)
+[백준 2468](https://www.acmicpc.net/problem/2468)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -48,6 +50,7 @@ int main()
     int temp = 0;
     rain = minN;
 
+    // 비가 최대높이랑 같으면 안전영역 0개임 (의미없음)
     while (rain < maxN)
     {
         for (int i = 0; i < n; i++)
@@ -57,14 +60,16 @@ int main()
                 if (a[i][j] > rain && !visited[i][j])
                 {
                     temp++;
-                    dfs(i, j, rain);
+                    dfs(i, j, rain); // 구역 세기니까 dfs
                 }
             }
         }
 
         ret = max(ret, temp);
-        temp = 0;
+
+        // 비와서 잠기는 높이가 달라지니까 항상 초기화하고 진행
         rain++;
+        temp = 0;
         memset(visited, 0, sizeof(visited));
     }
 

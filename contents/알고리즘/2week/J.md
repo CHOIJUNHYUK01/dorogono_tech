@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/10709)
+[백준 10709](https://www.acmicpc.net/problem/10709)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>

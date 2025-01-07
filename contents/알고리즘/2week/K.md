@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/3474)
+[백준 3474](https://www.acmicpc.net/problem/3474)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -19,7 +21,9 @@ int main()
         cin >> n;
 
         int ret = 0;
-        // 5의 배수 개수
+
+        // 0이 나오는 경우는 10의 배수, 즉 2 * 5임.
+        // 5의 배수 개수만 세면 됨
         for (int i = 5; i <= n; i *= 5)
         {
             ret += (n / i);

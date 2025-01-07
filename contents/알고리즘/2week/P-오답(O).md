@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/14502)
+[백준 14502](https://www.acmicpc.net/problem/14502)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -16,6 +18,7 @@ void check()
     {
         for (int j = 0; j < m; j++)
         {
+            // 바이러스가 다녀가지 않은 것 + 원래 빈 공간인 경우
             if (visited[i][j] == 0 && a[i][j] == 0)
                 temp++;
         }
@@ -53,14 +56,16 @@ int main()
         {
             cin >> a[i][j];
             if (a[i][j] == 0)
-                v.push_back({i, j});
+                v.push_back({i, j}); // 빈 공간 저장
             else if (a[i][j] == 2)
-                virus.push_back({i, j});
+                virus.push_back({i, j}); // 바이러스 위치 저장
             else
-                wall++;
+                wall++; // 벽개수 저장
         }
     }
 
+    // 벽 3개를 세워야 함
+    // 최대 8 * 8 * 8 =  512번 순회니까 for 중첩문으로 진행
     for (int i = 0; i < v.size() - 2; i++)
     {
         for (int j = i + 1; j < v.size() - 1; j++)
@@ -79,6 +84,7 @@ int main()
 
                 check();
 
+                // 항상 다시 원상복구 해줘야 함
                 a[v[i].first][v[i].second] = 0;
                 a[v[j].first][v[j].second] = 0;
                 a[v[k].first][v[k].second] = 0;

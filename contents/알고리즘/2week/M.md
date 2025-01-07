@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/1436)
+[백준 1436](https://www.acmicpc.net/problem/1436)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -17,6 +19,7 @@ int main()
     cout.tie(0);
 
     cin >> n;
+    // 조건 찾을 때까지 무한 루프
     for (int i = 666;; i++)
     {
         s = to_string(i);

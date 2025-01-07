@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/4949)
+[백준 4949](https://www.acmicpc.net/problem/4949)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -12,6 +14,8 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
+    // 앞서 진행한 "괄호" 문제와 동일함
+    // 다만 괄호의 종류가 많음
     while (true)
     {
         getline(cin, s);

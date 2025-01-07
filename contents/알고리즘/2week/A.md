@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2178)
+[백준 2178](https://www.acmicpc.net/problem/2178)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -32,7 +34,8 @@ int main()
         }
     }
 
-    visited[0][0] = 1;
+    // 이동할 수 있는 칸 모두가 현재 있는 칸보다 +1값이 되어야 하기에 bfs 선택
+    visited[0][0] = 1; // 시작지점부터 1칸으로 계산됨
     queue<pair<int, int>> q;
     q.push({0, 0});
 

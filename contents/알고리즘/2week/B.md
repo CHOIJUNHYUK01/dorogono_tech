@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/1012)
+[백준 1012](https://www.acmicpc.net/problem/1012)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -50,13 +52,14 @@ int main()
                 if (a[i][j] && !visited[i][j])
                 {
                     ret++;
-                    go(i, j);
+                    go(i, j); // 땅이 연결됐는지만 확인하기 위한 dfs 선택
                 }
             }
         }
 
         cout << ret << "\n";
 
+        // 초기화가 제일 중요!!
         ret = 0;
         memset(a, 0, sizeof(a));
         memset(visited, 0, sizeof(visited));

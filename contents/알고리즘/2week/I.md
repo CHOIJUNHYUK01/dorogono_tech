@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2870)
+[백준 2870](https://www.acmicpc.net/problem/2870)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -28,8 +30,10 @@ int main()
         for (int j = 0; j < s.size(); j++)
         {
             int cn = s[j] - '0';
+
             if (cn >= 0 && cn <= 9)
             {
+                // 숫자인 경우에만 스트링값으로 추가함
                 tmp += s[j];
             }
             else
@@ -38,6 +42,7 @@ int main()
                 {
                     while (true)
                     {
+                        // 0 없애기 로직
                         if (tmp.size() && tmp.front() == '0')
                             tmp.erase(tmp.begin());
                         else

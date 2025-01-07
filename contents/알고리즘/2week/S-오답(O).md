@@ -1,18 +1,20 @@
-[링크](https://www.acmicpc.net/problem/1325)
+[백준 1325](https://www.acmicpc.net/problem/1325)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> v[10001];
-int dp[10001], mx, visited[10001], n, m, a, b;
+int n, m, a, b, visited[10004], h[10004], mx = -987654321;
+vector<int> adj[10004];
 
 int dfs(int here)
 {
     visited[here] = 1;
     int ret = 1;
 
-    for (int there : v[here])
+    for (int there : adj[here])
     {
         if (visited[there])
             continue;
@@ -24,27 +26,24 @@ int dfs(int here)
 
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
     cin >> n >> m;
-    while (m--)
+    for (int i = 0; i < m; i++)
     {
         cin >> a >> b;
-        v[b].push_back(a);
+        adj[b].push_back(a);
     }
 
     for (int i = 1; i <= n; i++)
     {
+        // 각 컴퓨터마다 겹치는 컴퓨터도 있으니 초기화할 것
         memset(visited, 0, sizeof(visited));
-        dp[i] = dfs(i);
-        mx = max(dp[i], mx);
+        h[i] = dfs(i);
+        mx = max(mx, h[i]);
     }
 
     for (int i = 1; i <= n; i++)
     {
-        if (mx == dp[i])
+        if (mx == h[i])
             cout << i << " ";
     }
     cout << "\n";

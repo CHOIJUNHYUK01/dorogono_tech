@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2583)
+[백준 2583](https://www.acmicpc.net/problem/2583)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -12,6 +14,7 @@ vector<int> v;
 
 int dfs(int y, int x)
 {
+    // 실행마다 size가 늘어나도록 설정
     visited[y][x] = 1;
     sizeA++;
 
@@ -42,6 +45,7 @@ int main()
     {
         cin >> bx >> by >> tx >> ty;
 
+        // 박스 구역 칠하기
         for (int j = by; j < ty; j++)
         {
             for (int l = bx; l < tx; l++)
@@ -58,6 +62,7 @@ int main()
             if (a[i][j] == 1 || visited[i][j])
                 continue;
 
+            // 구역 개수와 설정을 vector로 해결
             v.push_back(dfs(i, j));
             sizeA = 0;
             area++;

@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2828)
+[백준 2828](https://www.acmicpc.net/problem/2828)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -13,6 +15,7 @@ int main()
     cout.tie(0);
 
     cin >> n >> m >> j;
+    // 바구니 좌측, 우측 값을 지정해서 범위 지정함
     lf = 1;
     rf = m;
     for (int i = 0; i < j; i++)

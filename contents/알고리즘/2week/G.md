@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2910)
+[백준 2910](https://www.acmicpc.net/problem/2910)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -12,11 +14,13 @@ map<int, int> mpIdx; // 인덱스 저장
 
 bool cmp(const pp &a, const pp &b)
 {
+    // 개수가 같을 경우, 인덱스 비교하기
     if (a.second == b.second)
     {
         return mpIdx[a.first] < mpIdx[b.first];
     }
 
+    // 기본은 개수로
     return a.second > b.second;
 }
 

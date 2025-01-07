@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2636)
+[백준 2636](https://www.acmicpc.net/problem/2636)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -22,10 +24,14 @@ void dfs(int y, int x)
             continue;
         if (visited[ny][nx])
             continue;
+
         if (a[ny][nx] == 1)
         {
+            // 이후에 녹일 치즈 좌표
             v.push_back({ny, nx});
             visited[ny][nx] = 1;
+
+            // 처음으로 치즈를 만났다면, 더 안으로 파고들면 안됨
             continue;
         }
         dfs(ny, nx);
