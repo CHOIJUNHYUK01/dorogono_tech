@@ -1,5 +1,7 @@
 [링크](https://www.acmicpc.net/problem/1987)
 
+<img src="https://skillicons.dev/icons?i=cpp" />
+
 ```
 #include <bits/stdc++.h>
 using namespace std;

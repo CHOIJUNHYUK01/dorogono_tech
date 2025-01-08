@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/16234)
+[백준 16234](https://www.acmicpc.net/problem/16234)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -72,12 +74,16 @@ int main()
             {
                 if (!visited[i][j])
                 {
+                    // bfs에서 사용될 값 초기화
                     vec.clear();
                     cnt = 0;
+
+                    // 이어진 곳이 조건이 맞다면, 국경을 열어야 하기에 bfs 선택
                     bfs(i, j);
                     if (vec.size() == 1)
                         temp++;
 
+                    // 국경선이 모두 닫힘
                     if (temp == n * n)
                     {
                         flag = true;

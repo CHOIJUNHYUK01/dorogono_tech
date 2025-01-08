@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/2589)
+[백준 2589](https://www.acmicpc.net/problem/2589)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -54,9 +56,12 @@ int main()
     {
         for (int j = 0; j < m; j++)
         {
+            // 어차피 순회하니, 땅이 겹쳐서 중복될 일은 없음
             if (a[i][j] == 'L')
             {
+                // 해당 시작점에서 체크하니까 초기화할 것
                 memset(visited, -1, sizeof(visited));
+                // 위나 아래로 이동할 경우에 모두 +1값이니까 bfs 선택
                 bfs(i, j);
             }
         }

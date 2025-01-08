@@ -1,4 +1,6 @@
-[링크](https://www.acmicpc.net/problem/15686)
+[백준 15686](https://www.acmicpc.net/problem/15686)
+
+<img src="https://skillicons.dev/icons?i=cpp" />
 
 ```
 #include <bits/stdc++.h>
@@ -21,11 +23,11 @@ int main()
             cin >> a[i][j];
             if (a[i][j] == 1)
             {
-                house.push_back({i, j});
+                house.push_back({i, j}); // 집 저장
             }
             else if (a[i][j] == 2)
             {
-                chic.push_back({i, j});
+                chic.push_back({i, j}); // 치킨 집 저장
             }
         }
     }
@@ -41,9 +43,11 @@ int main()
             }
         }
 
+        // 치킨집 개수 제한
         if (v.size() > m)
             continue;
 
+        // 치킨 거리 계산하기
         int cnt = 0;
         for (auto h : house)
         {
