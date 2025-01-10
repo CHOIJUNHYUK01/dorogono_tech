@@ -28,6 +28,8 @@ void go(int y, int x)
 
         if (a[ny][nx] == '1')
         {
+            // 사람이 있으면 멈춰야 하기에 방문체크만 함
+            // 벡터에는 추후에 0으로 바꿔야 함
             visited[ny][nx] = 1;
             v.push_back({ny, nx});
             continue;
@@ -52,10 +54,13 @@ int main()
     cout.tie(0);
 
     cin >> n >> m >> sy >> sx >> fy >> fx;
+
+    // 본인은 0,0을 시작점으로 할 것이기에 뺐음
     sy--;
     sx--;
     fy--;
     fx--;
+
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -66,11 +71,15 @@ int main()
 
     while (a[fy][fx] != 'X')
     {
+        // 점프 수
         ret++;
+        // 파동 확인 배열 초기화
         memset(visited, 0, sizeof(visited));
         v.clear();
 
         go(sy, sx);
+
+        // 점프를 맞은 친구는 0으로 바꿈
         for (auto it : v)
         {
             a[it.first][it.second] = '0';
@@ -81,4 +90,5 @@ int main()
 
     return 0;
 }
+
 ```
