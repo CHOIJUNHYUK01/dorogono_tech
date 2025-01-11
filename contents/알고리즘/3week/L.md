@@ -31,11 +31,14 @@ void go(int y, int x)
             continue;
         if (visited[a[ny][nx] - 'A'])
             continue;
+
+        // 일단 한 번 간 곳은 체크함
         visited[a[ny][nx] - 'A'] = 1;
         v.push_back(a[ny][nx] - 'A');
 
         go(ny, nx);
 
+        // 재귀로 돌고 난 후에는 다른 길로 여기를 방문할 수 있으니 초기화
         visited[a[ny][nx] - 'A'] = 0;
         v.pop_back();
     }
@@ -56,7 +59,10 @@ int main()
         }
     }
 
+    // 시작점은 무조건 (0,0)임
     v.push_back((a[0][0] - 'A'));
+
+    // 한 칸씩 움직이면서 확인해야 하니, dfs 선택함
     go(0, 0);
 
     cout << ret << "\n";
