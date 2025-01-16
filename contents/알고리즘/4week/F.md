@@ -6,7 +6,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int x = 64, n, cnt = 0;
+int n, ret = 0, x = 64;
 
 int main()
 {
@@ -18,17 +18,20 @@ int main()
 
     while (n != 0)
     {
+        // 목표 길이보다 짧을 때까지 반으로 쪼갬
         if (x > n)
         {
             x = x >> 1;
             continue;
         }
 
+        // 짧으면, 목표 길이에서 지금 막대기 길이만큼 뺌
         n -= x;
-        cnt++;
+        // 빼면 그 만큼의 막대를 이어붙인 것이기에 1을 더해줌
+        ret++;
     }
 
-    cout << cnt << "\n";
+    cout << ret << "\n";
 
     return 0;
 }
