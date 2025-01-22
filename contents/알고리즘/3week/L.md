@@ -2,7 +2,7 @@
 
 <img src="https://skillicons.dev/icons?i=cpp" />
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
